@@ -1,0 +1,57 @@
+---
+layout: sw-tool
+title: 从切割清单复制SOLIDWORKS自定义属性到模型的宏
+caption: 复制切割清单自定义属性到模型
+description: VBA宏，将SOLIDWORKS切割清单（钣金或焊接）的自定义属性复制到模型或配置
+image: copy-cutlist-properties.svg
+labels: [切割清单,钣金,属性]
+group: 自定义属性
+---
+此VBA宏将指定或所有SOLIDWORKS切割清单项的自定义属性复制到模型或配置。
+
+将复制第一个找到的切割清单的属性。
+
+{% code-snippet { file-name: Macro.vba } %}
+
+## 配置
+
+可以通过更改常量来配置宏
+
+### 属性范围
+
+*CONF_SPEC_PRP* 常量设置目标属性的范围。
+
+* True：将属性复制到配置特定选项卡
+* False：将属性复制到自定义选项卡
+
+### 属性来源
+
+*COPY_RES_VAL* 常量设置属性来源
+
+* True：复制解析值
+
+![已复制的解析值到自定义属性](copied-property-values.png) { width=500 }
+
+* False：复制表达式
+
+![已复制的表达式到自定义属性](copied-expressions.png) { width=500 }
+
+### 属性列表
+
+*PROPERTIES* 数组包含要复制的属性列表
+
+复制指定的属性
+
+~~~ vb
+Sub Init(Optional dummy As Variant = Empty)
+    PROPERTIES = Array("属性1", "属性2", "属性3") '复制属性1、属性2、属性3
+End Sub
+~~~
+
+复制所有属性
+
+~~~ vb
+Sub Init(Optional dummy As Variant = Empty)
+    PROPERTIES = Empty
+End Sub
+~~~
