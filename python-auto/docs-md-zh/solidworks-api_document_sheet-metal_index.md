@@ -1,0 +1,7 @@
+使用SOLIDWORKS API来操作薄板金属零件
+
+SOLIDWORKS API提供了许多方法和接口，用于操作零件文档中的薄板金属特征，包括IBaseFlangeFeatureData、IBendsFeatureData、ISketchedBendFeatureData等。
+
+可以通过调用相应薄板金属特征上的IFeature::GetDefinition SOLIDWORKS API来检索所有特定的特征数据。
+
+浏览本节以查找有关在SOLIDWORKS中自动化和增强薄板金属功能的有用宏和代码示例。
