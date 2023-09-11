@@ -1,0 +1,10 @@
+使用SOLIDWORKS Document Manager API处理装配文档
+装配
+这是一个关于使用Document Manager API处理装配的示例集合
+与常规的SOLIDWORKS API不同，Document Manager没有为装配文档提供特定的接口，而是应由ISwDMDocument和ISwDMConfiguration2接口进行管理。
+
+这些接口中的一些方法仅适用于装配文档，例如ISwDMConfiguration2::GetComponents或ISwDMDocument8::GetComponentCount。
+
+建议使用ISwDMDocument::FullName SOLIDWORKS Document Manager API获取完整路径，并将其扩展名与.sldasm匹配，以验证文档是否为装配。
+
+本节包含与使用Document Manager处理装配文档相关的示例和宏。
