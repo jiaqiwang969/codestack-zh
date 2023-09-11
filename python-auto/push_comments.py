@@ -18,9 +18,10 @@ import time
 cmds = {}
 
 # Execute each command
-for cmd in cmds:
-    os.system(cmd)
-    time.sleep(60)""".format(commands)
+for i,cmd in enumerate(cmds, start=1):
+    if i >= 167:
+        os.system(cmd)
+        time.sleep(15)""".format(commands)
 
 with open('push_comments-bash.py', 'w') as f:
     f.write(script)
