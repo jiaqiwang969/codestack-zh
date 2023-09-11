@@ -1,0 +1,20 @@
+---
+title: 处理SOLIDWORKS属性管理器页面的事件
+caption: 事件
+description: 属性管理器页面事件处理概述
+toc-group-name: labs-solidworks-swex
+order: 3
+---
+[PropertyManagerPageHandlerEx](https://docs.codestack.net/swex/pmpage/html/T_CodeStack_SwEx_PMPage_PropertyManagerPageHandlerEx.htm)类负责向客户端提供属性管理器页面引发的事件。
+
+处理程序的实例将由框架创建，并可以通过[PropertyManagerPageEx::Handler](https://docs.codestack.net/swex/pmpage/html/P_CodeStack_SwEx_PMPage_PropertyManagerPageEx_2_Handler.htm)属性进行访问。
+
+~~~ cs
+...
+m_Page = new PropertyManagerPageEx<MyPMPageHandler, DataModel>(m_Data, m_App);
+m_Page.Handler.Closed += r =>
+{
+    ...
+};
+...
+~~~
